@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="fondotexto" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#9DA68C</item>
+    </style>
+
+
+
+
+</resources>
