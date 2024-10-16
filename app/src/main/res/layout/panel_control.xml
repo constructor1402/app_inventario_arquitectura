@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A3F44"
+    android:background="#292D2E"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/title"
+        style="@style/estilo_letra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="Panel de Control"
-        android:textSize="28sp"
-        android:textColor="#C3C6A8"
-        android:fontFamily="sans-serif-medium"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -23,6 +21,7 @@
     <!-- CardView for Gestion de Equipos -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardGestionEquipos"
+        style="@style/estilo_boton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
@@ -37,108 +36,106 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/estilo_letra"
             android:text="Gestión de Equipos"
-            android:textColor="#C3C6A8"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
             android:layout_gravity="center" />
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for Gestión de Obras -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardGestionObras"
+        style="@style/estilo_boton"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardGestionEquipos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardGestionEquipos">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gestión de Obras"
-            android:textColor="#C3C6A8"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            style="@style/estilo_letra"
+            android:text="Gestión de Obras" />
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for Control de Entradas y Salidas -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardControlEntradasSalidas"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardGestionObras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardGestionObras">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:text="Control de Entradas y Salidas"
             android:textColor="#C3C6A8"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_gravity="center" />
+            android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for Certificaciones -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardCertificaciones"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardControlEntradasSalidas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardControlEntradasSalidas">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:text="Certificaciones"
             android:textColor="#C3C6A8"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_gravity="center" />
+            android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
-    <!-- CardView for Administrador de Usuarios -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardAdminUsuarios"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardCertificaciones"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardCertificaciones"
+        app:layout_constraintVertical_bias="0.32">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:text="Administrador de Usuarios"
             android:textColor="#C3C6A8"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-medium"
-            android:layout_gravity="center" />
+            android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
