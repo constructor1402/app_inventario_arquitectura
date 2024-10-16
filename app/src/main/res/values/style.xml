@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="fondotexto" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">#9DA68C</item>
+    <!-- estilo de de botones -->
+    <style name="estilo_boton" parent="">
+        <item name="android:backgroundTint">#1E2633</item>
+        <item name="android:textColor">#B7BC91</item>
+        <item name="android:fontFamily">@font/robotoblack</item>
     </style>
 
+    <!-- estilo de letra para titulos  -->
+    <style name="estilo_letra" parent="">
+        <item name="android:fontFamily">@font/nerkooneregular</item>
+        <item name="android:textColor">#9DA68C"</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center</item>
+
+
+
+    </style>
 
 
 
