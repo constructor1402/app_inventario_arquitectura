@@ -55,12 +55,13 @@
     <EditText
         android:id="@+id/editTextUsuario"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/cuadro_recbir_texto"
-        android:hint=""
+        android:maxLines="1"
+        android:paddingVertical="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewUsuario" />
@@ -79,13 +80,13 @@
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/cuadro_recbir_texto"
-        android:hint=""
         android:inputType="textPassword"
+        android:paddingVertical="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPassword" />

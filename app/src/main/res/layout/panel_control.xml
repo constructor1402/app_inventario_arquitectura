@@ -66,6 +66,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardControlEntradasSalidas"
+        style="@style/estilo_boton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -82,14 +83,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:text="Control de Entradas y Salidas"
-            android:textColor="#C3C6A8"
-            android:textSize="18sp" />
+            style="@style/estilo_letra"
+            android:text="Control de Entradas y Salidas" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardCertificaciones"
+        style="@style/estilo_boton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -106,14 +106,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:text="Certificaciones"
-            android:textColor="#C3C6A8"
-            android:textSize="18sp" />
+            style="@style/estilo_letra"
+            android:text="Certificaciones" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardAdminUsuarios"
+        style="@style/estilo_boton"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -132,10 +131,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-medium"
-            android:text="Administrador de Usuarios"
-            android:textColor="#C3C6A8"
-            android:textSize="18sp" />
+            style="@style/estilo_letra"
+            android:text="Administrador de Usuarios" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
