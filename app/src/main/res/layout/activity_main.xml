@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Bienvenidos a SGET"
+        android:text="@string/textoEmpresa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -35,7 +35,7 @@
         android:layout_width="285dp"
         android:layout_height="72dp"
         android:layout_marginTop="8dp"
-        android:text="Gestiona, controla y mantén al día tus equipos."
+        android:text="@string/resumen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="4dp"
-        android:text="Usuario"
+        android:text="@string/usuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewSubtitle" />
 
@@ -62,6 +62,7 @@
         android:background="@drawable/cuadro_recbir_texto"
         android:maxLines="1"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewUsuario" />
@@ -73,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="4dp"
-        android:text="Contraseña"
+        android:text="@string/contraseña"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextUsuario" />
 
@@ -87,6 +88,7 @@
         android:background="@drawable/cuadro_recbir_texto"
         android:inputType="textPassword"
         android:paddingVertical="12dp"
+        android:paddingHorizontal="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPassword" />
@@ -99,7 +101,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:text="Ingresa"
+        android:text="@string/btnIngresar"
+        android:onClick="ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
