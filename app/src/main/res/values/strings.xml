@@ -11,4 +11,14 @@
     <string name="control_de_entradas_y_salidas">Control de Entradas y Salidas</string>
     <string name="gestion_de_obras">Gestión de Obras</string>
     <string name="gestion_de_equipos">Gestión de Equipos</string>
+    <string name="numero_de_serie">Numero de Serie</string>
+    <string name="ingrese_numero_serie">Ingrese el numero de serie</string>
+    <string name="nombre_del_equipo">Nombre del Equipo</string>
+    <string name="ingrese_nombre_del_equipo">Ingrese nombre del equipo</string>
+    <string name="fecha_de_adquisici_n">Fecha de Adquisición</string>
+    <string name="ingrese_fecha_dd_mm_yyyy">Ingrese fecha (DD/MM/YYYY)</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="todo">TODO</string>
+    <string name="aceptar">Aceptar</string>
 </resources>
