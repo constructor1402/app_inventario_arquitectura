@@ -13,6 +13,18 @@
         android:theme="@style/Theme.App_inventario_arquitectura"
         tools:targetApi="31">
         <activity
+            android:name=".RegistroEquipo"
+            android:exported="false" />
+        <activity
+            android:name=".HistorialEquipo"
+            android:exported="false" />
+        <activity
+            android:name=".PanelControl"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarEquipo"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
