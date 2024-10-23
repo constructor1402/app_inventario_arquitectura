@@ -13,7 +13,10 @@
         android:theme="@style/Theme.App_inventario_arquitectura"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".paneldecontrol"
+            android:exported="false" />
+        <activity
+            android:name=".ingreso"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
