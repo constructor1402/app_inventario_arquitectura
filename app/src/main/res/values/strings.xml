@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">app_inventario_arquitectura</string>
-    <string name ="usuario"> usuario </string>
-    <string name ="contraseña"> Contraseña </string>
-    <string name ="btnIngresar"> Ingresa </string>
-    <string name ="textoEmpresa">Bienvenidos a SGET </string>
-    <string name ="resumen"> Gestiona, controla y mantén al día tus equipos. </string>
-    <string name ="titlePanelControl">Panel de Control</string>
+    <string name="usuario"> usuario </string>
+    <string name="contraseña"> Contraseña </string>
+    <string name="btnIngresar"> Ingresa </string>
+    <string name="textoEmpresa">Bienvenidos a SGET </string>
+    <string name="resumen"> Gestiona, controla y mantén al día tus equipos. </string>
+    <string name="titlePanelControl">Panel de Control</string>
+    <string name="hint_password">contraseña</string>
+    <string name="hint_usuario">Digitar usuario</string>
+    <string name="resumen_descripcion">Descripción del resumen que será leída por los lectores de pantalla.</string>
+
 </resources>
