@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#292D2E"
-    tools:context=".panelDeControlFragment">
+    tools:context="com.example.app_inventario_arquitectura.panelDeControlFragment">
 
 
     <TextView

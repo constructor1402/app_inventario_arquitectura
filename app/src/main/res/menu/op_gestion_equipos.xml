@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_crear"
+        android:icon="@drawable/ic_crear"
+        android:title="ic_crear"
+        />
+
+    <item
+        android:id="@+id/ic_editar"
+        android:icon="@drawable/ic_editar"
+        android:title="ic_editar"
+        />
+    <item
+        android:id="@+id/ic_eliminar"
+        android:icon="@drawable/ic_eliminar"
+        android:title="ic_eliminar"
+        />
+
+</menu>
