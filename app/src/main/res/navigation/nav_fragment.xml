@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navegacion_fragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/ingresoFragment">
+
+    <fragment
+        android:id="@+id/ingresoFragment"
+        android:name="com.example.app_inventario_arquitectura.IngresoFragment"
+        android:label="Ingreso" >
+        <action
+            android:id="@+id/action_ingresoFragment_to_panelDeControlFragment"
+            app:destination="@id/panelDeControlFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/panelDeControlFragment"
+        android:name="com.example.app_inventario_arquitectura.panelDeControlFragment"
+        android:label="Panel de Control" />
+
+</navigation>
