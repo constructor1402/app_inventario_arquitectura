@@ -1,19 +1,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_equipos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.equiposFragment">
 
-     <FrameLayout
+    <FrameLayout
         android:id="@+id/contenedor_fragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="649dp"
+        android:layout_gravity="top"
         android:background="@color/fondo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -26,3 +27,4 @@
         app:menu="@menu/op_gestion_equipos" />
 
 </FrameLayout>
+
