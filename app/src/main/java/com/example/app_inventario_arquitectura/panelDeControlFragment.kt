@@ -31,7 +31,7 @@ class panelDeControlFragment : Fragment(R.layout.fragment_panel_de_control) {
 
         cardViewOpcion1.setOnClickListener{
             parentFragmentManager.commit {
-                replace(R.id.fragmentContainer, crearFragment())
+                replace(R.id.fragmentContainer, equiposFragment())
                 addToBackStack(null)
             }
         }

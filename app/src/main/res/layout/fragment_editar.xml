@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/crearEquipo"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.equiposFragment">
@@ -16,12 +15,12 @@
 
         <!-- Título -->
         <TextView
-            android:id="@+id/crear_gestion"
+            android:id="@+id/edit_modif_gestion"
             style="@style/estilo_letra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Crear " />
+            android:text="Editar o Consultar " />
 
         <!-- Campo de Número de Serie -->
         <TextView
@@ -113,5 +112,4 @@
 
             />
     </LinearLayout>
-
 </FrameLayout>

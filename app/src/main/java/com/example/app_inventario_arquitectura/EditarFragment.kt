@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [crearFragment.newInstance] factory method to
+ * Use the [EditarFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class crearFragment : Fragment() {
+class EditarFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,15 +36,14 @@ class crearFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crear, container, false)
-
+        return inflater.inflate(R.layout.fragment_editar, container, false)
     }
 
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
 
-        fun newInstance(tipoGestion: String): crearFragment {
-            val fragment = crearFragment()
+        fun newInstance(tipoGestion: String): EditarFragment {
+            val fragment = EditarFragment()
             val args = Bundle()
             args.putString(ARG_TIPO_GESTION, tipoGestion)
             fragment.arguments = args
@@ -57,9 +56,8 @@ class crearFragment : Fragment() {
 
         val tipoGestion = arguments?.getString(ARG_TIPO_GESTION)
         // Cambia el título o contenido según el tipo de gestión
-        val tituloTextView: TextView = view.findViewById(R.id.crear_gestion)
-        tituloTextView.text = "Crear $tipoGestion"
+        val tituloTextView: TextView = view.findViewById(R.id.edit_modif_gestion)
+        tituloTextView.text = "Editar o Modificar $tipoGestion"
     }
-
 
 }
