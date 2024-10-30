@@ -28,14 +28,21 @@ class panelDeControlFragment : Fragment(R.layout.fragment_panel_de_control) {
         super.onViewCreated(view, savedInstanceState)
 
         val cardViewOpcion1: CardView = view.findViewById(R.id.cardGestionEquipos)
+        val cardViewOpcion2: CardView = view.findViewById(R.id.cardGestionObras)
 
         cardViewOpcion1.setOnClickListener{
             parentFragmentManager.commit {
-                replace(R.id.fragmentContainer, equiposFragment())
+                replace(R.id.fragmentContainer, g_equiposFragment())
                 addToBackStack(null)
             }
         }
 
+        cardViewOpcion2.setOnClickListener{
+            parentFragmentManager.commit {
+                replace(R.id.fragmentContainer, go_obras_Fragment())
+                addToBackStack(null)
+            }
+        }
 
     }
 

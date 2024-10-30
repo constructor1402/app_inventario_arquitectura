@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [EliminarFragment.newInstance] factory method to
+ * Use the [ge_Eliminar_Fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EliminarFragment : Fragment() {
+class ge_Eliminar_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,14 +36,14 @@ class EliminarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_elimnar, container, false)
+        return inflater.inflate(R.layout.ge_eliminar_fragment, container, false)
     }
 
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
 
-        fun newInstance(tipoGestion: String): EliminarFragment {
-            val fragment = EliminarFragment()
+        fun newInstance(tipoGestion: String): ge_Eliminar_Fragment {
+            val fragment = ge_Eliminar_Fragment()
             val args = Bundle()
             args.putString(ARG_TIPO_GESTION, tipoGestion)
             fragment.arguments = args

@@ -18,4 +18,8 @@
         android:name="com.example.app_inventario_arquitectura.panelDeControlFragment"
         android:label="Panel de Control" />
 
+
+
+
+
 </navigation>

@@ -2,26 +2,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/crearEquipo"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
-    tools:context="com.example.app_inventario_arquitectura.equiposFragment">
+    tools:context="com.example.app_inventario_arquitectura.g_equiposFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
         <!-- Título -->
         <TextView
-            android:id="@+id/crear_gestion"
+            android:id="@+id/edit_modif_gestion"
             style="@style/estilo_letra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Crear " />
+            android:text="Editar o Consultar " />
 
         <!-- Campo de Número de Serie -->
         <TextView
@@ -98,6 +97,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Campo de Fecha de Certificacion -->
+        <TextView
+            style="@style/estilo_letra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Fecha de Certificacion"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etFechaCertificacion"
+            style="@style/estilo_letra_cuadro"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/cuadro_recbir_texto"
+            android:hint="Fecha de Certificacion"
+            android:inputType="date"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnBuscar"
+            style="@style/estilo_boton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="buscar"
+            android:text="@string/btnBuscar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <Button
             android:id="@+id/btnGuardar"
             style="@style/estilo_boton"
@@ -108,10 +144,7 @@
             android:text="@string/btnGuardar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-
-            />
     </LinearLayout>
-
 </FrameLayout>

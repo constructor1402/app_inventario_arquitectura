@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.androidmaster.R
 
-class crearFragment : Fragment() {
+class ge_crear_Fragment : Fragment() {
 
     private var tipoGestion: String? = null
 
@@ -23,7 +23,7 @@ class crearFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_crear, container, false)
+        return inflater.inflate(R.layout.ge_crear_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,8 +36,8 @@ class crearFragment : Fragment() {
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
 
-        fun newInstance(tipoGestion: String): crearFragment {
-            val fragment = crearFragment()
+        fun newInstance(tipoGestion: String): ge_crear_Fragment {
+            val fragment = ge_crear_Fragment()
             val args = Bundle()
             args.putString(ARG_TIPO_GESTION, tipoGestion)
             fragment.arguments = args

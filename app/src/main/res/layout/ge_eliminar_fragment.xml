@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
-    tools:context="com.example.app_inventario_arquitectura.equiposFragment">
+    tools:context="com.example.app_inventario_arquitectura.g_equiposFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,12 +15,12 @@
 
         <!-- Título -->
         <TextView
-            android:id="@+id/edit_modif_gestion"
+            android:id="@+id/eliminar_gestion"
             style="@style/estilo_letra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Editar o Consultar " />
+            android:text="Eliminar " />
 
         <!-- Campo de Número de Serie -->
         <TextView
@@ -112,4 +112,5 @@
 
             />
     </LinearLayout>
+
 </FrameLayout>

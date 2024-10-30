@@ -8,10 +8,8 @@ import com.example.androidmaster.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-// TODO: Rename parameter arguments, choose names that match
+class g_equiposFragment : Fragment(R.layout.ge_equipos_fragment) {
 
-class equiposFragment : Fragment(R.layout.fragment_equipos) {
-    // TODO: Rename and change types of parameters
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -24,17 +22,17 @@ class equiposFragment : Fragment(R.layout.fragment_equipos) {
             when (item.itemId) {
                 R.id.ic_crear -> {
 
-                    cargarFragmento(crearFragment.newInstance(tipoGestion))
+                    cargarFragmento(ge_crear_Fragment.newInstance(""))
                     true
 
                 }
                 R.id.ic_editar -> {
-                    cargarFragmento(EditarFragment.newInstance(tipoGestion))
+                    cargarFragmento(ge_Editar_Fragment.newInstance(""))
                     true
                 }
 
                 R.id.ic_eliminar -> {
-                    cargarFragmento(EliminarFragment.newInstance(tipoGestion))
+                    cargarFragmento(ge_Eliminar_Fragment.newInstance(""))
                     true
                 }
                 else -> false
