@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo gris claro como marcador -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E0E0E0" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Imagen de marcador o ícono -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_placeholder_icon" /> <!-- Reemplaza con un ícono existente -->
+    </item>
+</layer-list>
+
