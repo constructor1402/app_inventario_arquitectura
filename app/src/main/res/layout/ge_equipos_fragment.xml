@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_ingreso"
-    tools:context="com.example.app_inventario_arquitectura.g_equiposFragment">
+    tools:context="com.example.app_inventario_arquitectura.ge_equiposFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
@@ -21,7 +21,7 @@
         />
 
     <FrameLayout
-        android:id="@+id/contenedor_fragment"
+        android:id="@+id/ge_contenedor_fragment"
         android:layout_width="match_parent"
         android:layout_height="569dp"
         android:layout_gravity="center"

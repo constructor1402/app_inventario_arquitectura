@@ -1,6 +1,5 @@
 package com.example.app_inventario_arquitectura
 
-
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -8,7 +7,7 @@ import com.example.androidmaster.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class g_equiposFragment : Fragment(R.layout.ge_equipos_fragment) {
+class ge_equiposFragment : Fragment(R.layout.ge_equipos_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,7 +42,7 @@ class g_equiposFragment : Fragment(R.layout.ge_equipos_fragment) {
 
     private fun cargarFragmento(fragment: Fragment) {
         childFragmentManager.beginTransaction()
-            .replace(R.id.contenedor_fragment, fragment)
+            .replace(R.id.ge_contenedor_fragment, fragment)
             .commit()
     }
 

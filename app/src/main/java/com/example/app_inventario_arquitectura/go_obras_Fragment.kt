@@ -7,13 +7,12 @@ import com.example.androidmaster.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
+
 class go_obras_Fragment : Fragment(R.layout.go_obras_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-
-
 
         // Ajusta según el tipo de gestión
         val tipoGestion = "Obras"
@@ -21,15 +20,15 @@ class go_obras_Fragment : Fragment(R.layout.go_obras_fragment) {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.ic_crear -> {
-                    cargarFragmento(ge_crear_Fragment.newInstance(""))
+                    cargarFragmento(go_crear_Fragment.newInstance(""))
                     true
                 }
                 R.id.ic_editar -> {
-                    cargarFragmento(ge_Editar_Fragment.newInstance(""))
+                    cargarFragmento(go_editar_Fragment.newInstance(""))
                     true
                 }
                 R.id.ic_eliminar -> {
-                    cargarFragmento(ge_Eliminar_Fragment.newInstance(""))
+                    cargarFragmento(go_eliminar_Fragment.newInstance(""))
                     true
                 }
                 else -> false
@@ -40,7 +39,7 @@ class go_obras_Fragment : Fragment(R.layout.go_obras_fragment) {
 
     private fun cargarFragmento(fragment: Fragment) {
         childFragmentManager.beginTransaction()
-            .replace(R.id.contenedor_fragment, fragment)
+            .replace(R.id.go_contenedor_fragment, fragment)
             .commit()
     }
 }

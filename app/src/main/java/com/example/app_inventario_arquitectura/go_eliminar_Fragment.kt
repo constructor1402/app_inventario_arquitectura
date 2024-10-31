@@ -10,8 +10,10 @@ import com.example.androidmaster.R
 
 // TODO: Rename parameter arguments, choose names that match
 
-class ge_Eliminar_Fragment : Fragment() {
+
+class go_eliminar_Fragment : Fragment() {
     // TODO: Rename and change types of parameters
+
 
 
     override fun onCreateView(
@@ -19,14 +21,14 @@ class ge_Eliminar_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ge_eliminar_fragment, container, false)
+        return inflater.inflate(R.layout.go_eliminar_fragment, container, false)
     }
 
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
 
-        fun newInstance(tipoGestion: String): ge_Eliminar_Fragment {
-            val fragment = ge_Eliminar_Fragment()
+        fun newInstance(tipoGestion: String): go_eliminar_Fragment {
+            val fragment = go_eliminar_Fragment()
             val args = Bundle()
             args.putString(ARG_TIPO_GESTION, tipoGestion)
             fragment.arguments = args
@@ -42,4 +44,6 @@ class ge_Eliminar_Fragment : Fragment() {
         val tituloTextView: TextView = view.findViewById(R.id.eliminar_gestion)
         tituloTextView.text = "Eliminar $tipoGestion"
     }
+
+
 }
