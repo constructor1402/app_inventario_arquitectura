@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705618582089",
+    "project_id": "inventario-arquitectura",
+    "storage_bucket": "inventario-arquitectura.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705618582089:android:6efbfae8cc53a81deebd98",
+        "android_client_info": {
+          "package_name": "com.example.androidmaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChr7auRGbJ_nIyEir3MRLe7oG0XaVtGc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,9 +18,6 @@ class MainActivity : AppCompatActivity() {
            // v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             //insets
 
-
-
-
             supportFragmentManager.commit {
                 replace<IngresoFragment>(R.id.fragmentContainer)
                 setReorderingAllowed(true)
