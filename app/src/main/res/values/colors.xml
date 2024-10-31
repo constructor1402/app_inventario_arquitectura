@@ -6,6 +6,7 @@
     <color name="colortexto">#9DA68C</color>
     <color name="text_color_contraste">#003366</color>
     <color name="fondo_ingreso">#292D2E</color>
+    <color name="colorError">#DD2C00</color>
 
 
 

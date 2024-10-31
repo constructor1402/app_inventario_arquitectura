@@ -8,17 +8,6 @@
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.go_obras_Fragment">
 
-    <!-- Toolbar en la parte superior con título y flecha de retroceso
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
-        android:layout_width="match_parent"
-        android:layout_height="81dp"
-        android:background="@color/fondo"
-        app:navigationIcon="@drawable/ic_back"
-        app:title="Obras"
-        app:titleTextColor="@color/colortexto"
-        />
-    -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
@@ -31,10 +20,8 @@
         app:titleTextColor="@color/colortexto"
         />
 
-    <!-- TODO: Update blank fragment layout -->
-
     <FrameLayout
-        android:id="@+id/contenedor_fragment"
+        android:id="@+id/go_contenedor_fragment"
         android:layout_width="match_parent"
         android:layout_height="569dp"
         android:layout_gravity="center"
