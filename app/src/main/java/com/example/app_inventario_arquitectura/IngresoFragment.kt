@@ -55,10 +55,9 @@ class IngresoFragment : Fragment() {
                         replace(R.id.fragmentContainer, panelDeControlFragment())
                         addToBackStack(null)
                     }
+                }else{
+                    showToast("Usuario no permitido")
                 }
-            }?.addOnFailureListener{ e->
-                showToast("No se pudo iniciar sesion debido a ${e.message}")
-
             }
     }
 
