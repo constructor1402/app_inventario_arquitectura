@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Fecha de Adquisición"
+                android:text="Seleccionar Fecha de Adquisición"
                 android:textSize="16sp" />
 
             <EditText
@@ -111,7 +111,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Fecha de Adquisición"
+                android:hint=" Fecha de Adquisicion "
                 android:inputType="date"
                 android:maxLines="1" />
 
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Seleccionar Fecha de Adquisición" />
+                android:text="Pulsar Fecha de Adquisición" />
 
             <!-- Botones para Guardar y Cancelar -->
             <LinearLayout

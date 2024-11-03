@@ -9,6 +9,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.1.4"
+materialVersion = "1.7.5"
 navigationFragmentKtx = "2.8.3"
 navigationUiKtx = "2.8.3"
 googleServiceVersion="4.4.2"
@@ -18,6 +19,7 @@ firebaseStorageV = "21.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-material = { module = "androidx.compose.material:material", version.ref = "materialVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

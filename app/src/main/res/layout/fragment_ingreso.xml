@@ -97,10 +97,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPassword" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnIngresar"
         style="@style/estilo_boton"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:onClick="ingresar"
@@ -109,7 +109,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextPassword"
-
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/colortexto"
+        app:icon="@drawable/ic_ingresar"
+        app:iconSize="15dp"
+        app:iconTint="@color/colortexto"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
