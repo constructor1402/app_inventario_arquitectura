@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment
 import com.example.androidmaster.R
 import com.google.android.material.snackbar.Snackbar
 
-class ge_crear_Fragment : Fragment() {
+class ge_crearFragment : Fragment() {
 
     private var tipoGestion: String? = null
     private lateinit var ivImagenEquipo: ImageView
@@ -109,8 +109,8 @@ class ge_crear_Fragment : Fragment() {
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
 
-        fun newInstance(tipoGestion: String): ge_crear_Fragment {
-            val fragment = ge_crear_Fragment()
+        fun newInstance(tipoGestion: String): ge_crearFragment {
+            val fragment = ge_crearFragment()
             val args = Bundle()
             args.putString(ARG_TIPO_GESTION, tipoGestion)
             fragment.arguments = args

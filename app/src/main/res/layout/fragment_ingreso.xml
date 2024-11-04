@@ -7,6 +7,22 @@
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.IngresoFragment">
 
+
+
+    <!-- Barra superior -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar_Ingresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fondo_ingreso"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/colortexto"
+        app:title="SGET"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/ToolbarTitleTextAppearance"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="215dp"

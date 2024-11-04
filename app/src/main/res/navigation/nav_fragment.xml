@@ -14,11 +14,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/ge_equiposFragment"
+        android:name="com.example.app_inventario_arquitectura.ge_equiposFragment"
+        android:label="Equipos">
+        <action
+            android:id="@+id/action_ge_equiposFragment_to_panelDeControlFragment"
+            app:destination="@id/panelDeControlFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/panelDeControlFragment"
         android:name="com.example.app_inventario_arquitectura.panelDeControlFragment"
         android:label="Panel de Control" />
-
-
 
 
 

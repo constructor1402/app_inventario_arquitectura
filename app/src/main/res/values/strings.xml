@@ -5,13 +5,28 @@
     <string name="btnIngresar"> Ingresa </string>
     <string name="textoEmpresa">Bienvenidos a SGET </string>
     <string name="resumen"> Gestiona, controla y mantén al día tus equipos. </string>
-    <string name="titlePanelControl">Panel de Control</string>
     <string name="hint_password">contraseña</string>
     <string name="hint_usuario">Digitar usuario</string>
     <string name="resumen_descripcion">Descripción del resumen que será leída por los lectores de pantalla.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="titlePanelControl">Panel de Control</string>
+    <string name="title_gestion_equipos">Gestion de Equipos</string>
+    <string name="title_gestion_obras">Gestion de Obras</string>
+    <string name="title_gestion_Movimientos_De_equipos">Movimeintos De Equipos</string>
+    <string name="title_gestion_Usuarios">Administracion de Usuarios</string>
+
+
+
     <string name="btnGuardar"> Guardar </string>
     <string name="btnBuscar"> Buscar </string>
     <string name="btnEliminar"> Eliminar </string>
+    <string name="btnAdminUsers"> Administrador Usuarios </string>
+
+
+
+
+
+
 </resources>

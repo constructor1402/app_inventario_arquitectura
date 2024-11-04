@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.example.androidmaster.R
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.firebase.auth.FirebaseAuth
 
 class IngresoFragment : Fragment() {
@@ -42,6 +43,13 @@ class IngresoFragment : Fragment() {
             } else {
                 autenticarUsuario(email, password)
             }
+        }
+
+        // Configurar la barra superior con el botón de salir
+        val topAppBar: MaterialToolbar = view.findViewById(R.id.topAppBar_Ingresar)
+        topAppBar.setNavigationOnClickListener {
+            // Accion para cerrar la actividad o navegar hacia atrás
+            requireActivity().finish()
         }
     }
 

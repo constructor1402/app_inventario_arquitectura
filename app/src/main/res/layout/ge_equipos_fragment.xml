@@ -2,24 +2,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fragment_equipos"
+    android:id="@+id/ge_equiposFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_ingreso"
-    tools:context="com.example.app_inventario_arquitectura.ge_equiposFragment">
+    tools:context="com.example.app_inventario_arquitectura.ge_equiposFragment"
+    >
 
     <!-- Barra superior -->
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
+        android:id="@+id/topAppBar_equipos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/fondo"
-        app:navigationIcon="@drawable/ic_back"
-        app:navigationIconTint="@color/colortexto"
-        app:title="Equipos"
+        android:background="@color/fondo_ingreso"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Gestions de Equipos"
         app:titleCentered="true"
         app:titleTextColor="@color/colortexto"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:titleTextAppearance="@style/ToolbarTitleTextAppearance" />
+
 
     <!-- Contenedor del Fragmento -->
     <FrameLayout
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/fondo"
-        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar_equipos"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
 
     <!-- Barra de navegación inferior -->

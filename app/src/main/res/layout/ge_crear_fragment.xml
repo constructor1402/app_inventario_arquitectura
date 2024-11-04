@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/crearEquipo"
     android:background="@color/fondo_ingreso"
-    tools:context="com.example.app_inventario_arquitectura.ge_crear_Fragment">
+    tools:context="com.example.app_inventario_arquitectura.ge_crearFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -87,22 +87,22 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_placeholder_icon" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCargarImagen"
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Cargar Imagen" />
+                android:text="Cargar Imagen"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/colortexto"
+                app:icon="@drawable/ic_cargar_ar"
+                app:iconSize="15dp"
+                app:iconTint="@color/colortexto"
+                />
 
             <!-- Campo de Fecha de Adquisición -->
-            <TextView
-                style="@style/estilo_letra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Seleccionar Fecha de Adquisición"
-                android:textSize="16sp" />
+
 
             <EditText
                 android:id="@+id/etFechaAdquisicion"
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Pulsar Fecha de Adquisición" />
+                android:text="Seleccionar Fecha de Adquisición" />
 
             <!-- Botones para Guardar y Cancelar -->
             <LinearLayout
