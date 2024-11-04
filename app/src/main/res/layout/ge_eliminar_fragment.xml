@@ -2,16 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.ge_Eliminar_Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center">
+        android:padding="16dp">
 
         <!-- Título -->
         <TextView
@@ -20,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Eliminar " />
+            android:text="@string/titleEliminar"
+            />
 
         <!-- Campo de Número de Serie -->
         <TextView
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Número de Serie"
+            android:text="@string/Numero_Serie"
             android:textSize="16sp" />
 
         <EditText
@@ -40,8 +40,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese el número de serie"
-            android:inputType="textVisiblePassword"
+            android:hint="@string/Ing_Numero_Serie"
+            android:inputType="text|number"
+            android:autofillHints="text|number"
             android:maxLines="1" />
 
         <!-- Campo de Tipo de Equipo -->
@@ -50,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Tipo de Equipo"
+            android:text="@string/Tipo_Equipo"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/etTipoEquipo"
             style="@style/estilo_letra_cuadro"
             android:layout_width="237dp"
@@ -62,9 +63,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese el Tipo de Equipo"
-            android:inputType="text"
-            android:maxLines="1" />
+            android:hint="@string/Tipo_Equipo"
+ />
 
         <!-- Campo de Fecha de Adquisición -->
         <TextView
@@ -72,10 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Fecha de Adquisición"
+            android:text="@string/Fecha_Adquisicion"
             android:textSize="16sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/etFechaAdquisicion"
             style="@style/estilo_letra_cuadro"
             android:layout_width="237dp"
@@ -84,8 +84,30 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Fecha de Adquisicion"
             android:focusable="false"
+            android:hint="@string/Fecha_Adquisicion"
+            android:onClick="showDatePicker" />
+
+        <!-- Campo de Fecha de Certificacion -->
+        <TextView
+            style="@style/estilo_letra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/Fecha_Certificacion"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/etFechaCertificacion_Eliminar"
+            style="@style/estilo_letra_cuadro"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/cuadro_recbir_texto"
+            android:focusable="false"
+            android:hint="@string/Fecha_Certificacion"
             android:onClick="showDatePicker" />
 
         <!-- Indicador de Error -->
@@ -93,10 +115,10 @@
             android:id="@+id/tvError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorError"
             android:layout_marginTop="8dp"
-            android:visibility="gone"
-            android:text="Error: Complete todos los campos" />
+            android:text="Error: Complete todos los campos"
+            android:textColor="@color/colorError"
+            android:visibility="gone" />
 
         <!-- ProgressBar -->
         <ProgressBar
@@ -106,29 +128,39 @@
             android:layout_marginTop="16dp"
             android:visibility="gone" />
 
-        <!-- Botones Guardar y Cancelar -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp">
-
-            <Button
-                android:id="@+id/btnGuardar"
-                style="@style/estilo_boton"
+            <!-- Botones Guardar, Eliminar y Cancelar -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnEliminar"
-                android:onClick="eliminar" />
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnCancelar"
-                style="@style/estilo_boton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Cancelar"
-                android:onClick="cancelar" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnBuscar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="buscar"
+                    android:text="Buscar" />
+
+                <Button
+                    android:id="@+id/btnEliminar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:onClick="eliminar"
+                    android:text="@string/btnEliminar" />
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:onClick="cancelar"
+                    android:text="Cancelar" />
+            </LinearLayout>
+
     </LinearLayout>
 </FrameLayout>

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="@color/fondo_ingreso"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Gestions de Equipos"
+        app:title="Gestion de Equipos"
         app:titleCentered="true"
         app:titleTextColor="@color/colortexto"
         app:titleTextAppearance="@style/ToolbarTitleTextAppearance" />
@@ -27,7 +27,7 @@
         android:id="@+id/ge_contenedor_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/fondo"
+        android:background="@color/fondo_ingreso"
         app:layout_constraintTop_toBottomOf="@id/topAppBar_equipos"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
 
@@ -36,7 +36,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/fondo"
+        android:background="@color/fondo_ingreso"
         app:itemIconTint="@color/colortexto"
         app:itemTextColor="@color/colortexto"
         app:menu="@menu/op_gestion"

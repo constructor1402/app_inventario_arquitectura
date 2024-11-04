@@ -1,3 +1,5 @@
+package com.example.app_inventario_arquitectura
+
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager

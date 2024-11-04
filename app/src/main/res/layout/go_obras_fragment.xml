@@ -8,24 +8,24 @@
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.go_obras_Fragment">
 
+    <!-- Barra superior -->
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
+        android:id="@+id/topAppBar_obras"
         android:layout_width="match_parent"
-        android:layout_height="81dp"
-        android:background="@color/fondo"
-        app:navigationIcon="@drawable/ic_back"
-        app:navigationIconTint="@color/colortexto"
-        app:title="Obras"
+        android:layout_height="wrap_content"
+        android:background="@color/fondo_ingreso"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Gestion de obras"
         app:titleCentered="true"
         app:titleTextColor="@color/colortexto"
-        />
+        app:titleTextAppearance="@style/ToolbarTitleTextAppearance" />
 
     <FrameLayout
         android:id="@+id/go_contenedor_fragment"
         android:layout_width="match_parent"
         android:layout_height="569dp"
         android:layout_gravity="center"
-        android:background="@color/fondo"
+        android:background="@color/fondo_ingreso"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/fondo"
+        android:background="@color/fondo_ingreso"
         app:itemIconTint="@color/colortexto"
         app:itemTextColor="@color/colortexto"
         app:menu="@menu/op_gestion" />

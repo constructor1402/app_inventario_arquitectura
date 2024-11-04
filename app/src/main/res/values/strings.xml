@@ -2,30 +2,42 @@
     <string name="app_name">app_inventario_arquitectura</string>
     <string name="usuario"> usuario </string>
     <string name="contraseña"> Contraseña </string>
-    <string name="btnIngresar"> Ingresa </string>
     <string name="textoEmpresa">Bienvenidos a SGET </string>
     <string name="resumen"> Gestiona, controla y mantén al día tus equipos. </string>
     <string name="hint_password">contraseña</string>
     <string name="hint_usuario">Digitar usuario</string>
     <string name="resumen_descripcion">Descripción del resumen que será leída por los lectores de pantalla.</string>
-
+    <string name="Numero_Serie">Número de Serie</string>
+    <string name="Ing_Numero_Serie">Ingrese el número de serie</string>
+    <string name="Tipo_Equipo">Tipo De Equipo</string>
+    <string name="Ing_Tipo_Equipo">Ingrese Tipo De Equipo</string>
+    <string name="Imagen_Equipo">Imagen Del Equipo</string>
+    <string name="Cargar_Imagen_Equipo">Cargar Imagen</string>
 
 
     <string name="titlePanelControl">Panel de Control</string>
-    <string name="title_gestion_equipos">Gestion de Equipos</string>
-    <string name="title_gestion_obras">Gestion de Obras</string>
-    <string name="title_gestion_Movimientos_De_equipos">Movimeintos De Equipos</string>
-    <string name="title_gestion_Usuarios">Administracion de Usuarios</string>
+    <string name="titleCrear">Crear</string>
+    <string name="titleEliminar">Eliminar</string>
+    <string name="titleEditar">Editar</string>
 
-
-
+    <!--  Botones -->
+    <string name="btnIngresar"> Ingresa </string>
     <string name="btnGuardar"> Guardar </string>
     <string name="btnBuscar"> Buscar </string>
     <string name="btnEliminar"> Eliminar </string>
-    <string name="btnAdminUsers"> Administrador Usuarios </string>
+    <string name="btn_cancelar"> Cancelar </string>
+    <string name="btn_gestion_equipos">Gestion de Equipos</string>
+    <string name="btn_gestion_obras">Gestion de Obras</string>
+    <string name="btn_gestion_Movimientos_De_equipos">Movimeintos De Equipos</string>
+    <string name="btn_gestion_Usuarios">Administracion de Usuarios</string>
 
 
 
+    <!-- Campos de Fecha -->
+    <string name="Sel_Fecha_Adquisicion"> Seleccionar Fecha De Adquisicion </string>
+    <string name="Fecha_Adquisicion"> Fecha De Adquisicion </string>
+    <string name="Sel_Fecha_Certificacion"> Seleccionar Fecha De Certificacion </string>
+    <string name="Fecha_Certificacion"> Fecha De Certificacion </string>
 
 
 

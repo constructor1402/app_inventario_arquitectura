@@ -41,11 +41,9 @@
             <EditText
                 android:id="@+id/etNumeroSerie"
                 style="@style/estilo_letra_cuadro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="Número de serie"
                 android:inputType="textVisiblePassword"
@@ -63,11 +61,9 @@
             <EditText
                 android:id="@+id/etTipoEquipo"
                 style="@style/estilo_letra_cuadro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="Tipo de Equipo"
                 android:inputType="text"
@@ -85,23 +81,22 @@
             <EditText
                 android:id="@+id/etFechaAdquisicion"
                 style="@style/estilo_letra_cuadro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="Fecha de Adquisición"
                 android:inputType="date"
                 android:maxLines="1" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFechaAdquisicion"
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Seleccionar Fecha de Adquisición" />
+                android:text="Seleccionar Fecha de Adquisición"
+                />
 
             <!-- Campo de Fecha de Certificación -->
             <TextView
@@ -115,11 +110,9 @@
             <EditText
                 android:id="@+id/etFechaCertificacion"
                 style="@style/estilo_letra_cuadro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="Fecha de Certificación"
                 android:inputType="date"
