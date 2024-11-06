@@ -1,0 +1,268 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/au_editar"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_ingreso"
+    tools:context="com.example.app_inventario_arquitectura.au_editarFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/edit_modif_usuario"
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="Editar Usuario"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Instrucción -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Ingrese el correo electrónico para buscar"
+                android:textSize="14sp"/>
+
+            <!-- Campo de Correo Electrónico (Búsqueda) -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Correo Electrónico"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Ingrese correo electrónico"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+            <!-- Botón de búsqueda -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuscar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="Buscar"
+                app:icon="@drawable/ic_buscar"
+                app:iconSize="15dp"
+                app:iconTint="#9DA68C"
+                app:strokeColor="@color/colortexto"
+                app:strokeWidth="1dp"/>
+
+            <!-- Campo de Identificación -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Identificación"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etIdentificacion"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Identificación"
+                android:inputType="number"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Nombre -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Nombre"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Apellidos -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Apellidos"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etApellidos"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Apellidos"
+                android:inputType="text"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Tipo de Usuario -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tipo de Usuario"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etTipoUsuario"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Tipo de usuario"
+                android:inputType="text"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Cargo en la Empresa -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cargo en la Empresa"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etCargo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Cargo en la empresa"
+                android:inputType="text"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Contraseña -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Contraseña"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etContrasena"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Botones para Guardar y Cancelar en una fila -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guardar"
+                    android:enabled="false"
+                    app:icon="@drawable/ic_guardar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelarEditar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:layout_marginStart="16dp"
+                    app:icon="@drawable/ic_cancelar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
+
+            <!-- Botón para Eliminar en una fila independiente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEliminar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Eliminar"
+                app:icon="@drawable/ic_eliminar"
+                app:iconSize="15dp"
+                app:iconTint="#9DA68C"
+                app:strokeColor="@color/colortexto"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

@@ -55,11 +55,11 @@ class panelDeControlFragment : Fragment(R.layout.fragment_panel_de_control) {
             }
         }
 
-        /*btnAdminUsuarios.setOnClickListener {
+        btnAdminUsuarios.setOnClickListener {
             parentFragmentManager.commit {
-                replace(R.id.fragmentContainer, AdminUsuariosFragment())
+                replace(R.id.fragmentContainer, au_AdministradorUsuariosFragment())
                 addToBackStack(null)
             }
-        }*/
+        }
     }
 }

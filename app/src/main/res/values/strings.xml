@@ -33,15 +33,11 @@
     <string name="instruccion_consulta_Obra">Por favor, ingrese el número de obra y presione "Buscar" para cargar los datos.</string>
 
 
-
-
     <string name="titlePanelControl">Panel de Control</string>
     <string name="titleCrear">Crear</string>
     <string name="titleEliminar">Eliminar</string>
     <string name="titleEditar">Editar</string>
     <string name="titleEditarConsultar">Editar o Consultar</string>
-
-
 
 
     <!--  Botones -->
