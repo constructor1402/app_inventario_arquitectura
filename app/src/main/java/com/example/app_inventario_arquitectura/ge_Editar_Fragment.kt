@@ -5,17 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.androidmaster.R
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Calendar
 
 class ge_Editar_Fragment : Fragment() {
 
-    private lateinit var baseDeDatos: BaseDeDatos
+    private val db = FirebaseFirestore.getInstance()
     private lateinit var etNumeroSerie: EditText
     private lateinit var etTipoEquipo: EditText
     private lateinit var etModelo: EditText
@@ -26,11 +24,9 @@ class ge_Editar_Fragment : Fragment() {
     private lateinit var btnFechaCertificacion: Button
     private lateinit var btnGuardar: Button
     private lateinit var btnCancelar: Button
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        baseDeDatos = MockBaseDeDatos() // Asegúrate de que esta clase esté implementada
-    }
+    private lateinit var btnBuscar: Button
+    private lateinit var progressBar: ProgressBar
+    private var equipoId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,28 +52,29 @@ class ge_Editar_Fragment : Fragment() {
         btnFechaCertificacion = view.findViewById(R.id.btnFechaCertificacion)
         btnGuardar = view.findViewById(R.id.btnGuardar)
         btnCancelar = view.findViewById(R.id.btnCancelarEditar)
+        btnBuscar = view.findViewById(R.id.btnBuscar)
+        progressBar = view.findViewById(R.id.progressBar)
+
+        progressBar.visibility = View.INVISIBLE  // Oculta el ProgressBar inicialmente
+
+        btnGuardar.setOnClickListener { validarCampos() }
+        btnCancelar.setOnClickListener { cancelarEdicion() }
 
         btnFechaAdquisicion.setOnClickListener {
-            showDatePickerDialog { date ->
-                etFechaAdquisicion.text = date
-            }
+            showDatePickerDialog { date -> etFechaAdquisicion.text = date }
         }
         btnFechaCertificacion.setOnClickListener {
-            showDatePickerDialog { date ->
-                etFechaCertificacion.text = date
+            showDatePickerDialog { date -> etFechaCertificacion.text = date }
+        }
+
+        btnBuscar.setOnClickListener {
+            val numeroSerie = etNumeroSerie.text.toString().trim()
+            if (numeroSerie.isNotEmpty()) {
+                buscarEquipoPorNumeroSerie(numeroSerie)
+            } else {
+                Toast.makeText(context, "Ingrese el número de serie para buscar", Toast.LENGTH_SHORT).show()
             }
         }
-
-        btnGuardar.setOnClickListener {
-            validarCampos()
-        }
-
-        btnCancelar.setOnClickListener {
-            cancelarEdicion()
-        }
-
-        val numeroSerie = etNumeroSerie.text.toString()
-        buscarEquipoPorNumeroSerie(numeroSerie)
     }
 
     private fun validarCampos() {
@@ -92,28 +89,30 @@ class ge_Editar_Fragment : Fragment() {
             fechaAdquisicion.isEmpty() || fechaCertificacion.isEmpty() || vigencia.isEmpty()) {
             Toast.makeText(requireContext(), "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
         } else {
-            guardarEquipo(numeroSerie, tipoEquipo, modelo, fechaAdquisicion, fechaCertificacion, vigencia)
+            actualizarEquipo(equipoId, numeroSerie, tipoEquipo, modelo, fechaAdquisicion, fechaCertificacion, vigencia)
         }
     }
 
-    private fun guardarEquipo(numeroSerie: String, tipoEquipo: String, modelo: String, fechaAdquisicion: String, fechaCertificacion: String, vigencia: String) {
-        val equipo = Equipo(
-            numeroSerie = numeroSerie,
-            tipoEquipo = tipoEquipo,
-            modelo = modelo,
-            fechaAdquisicion = fechaAdquisicion,
-            fechaCertificacion = fechaCertificacion,
-            vigencia = vigencia
+    private fun actualizarEquipo(id: String?, numeroSerie: String, tipoEquipo: String, modelo: String, fechaAdquisicion: String, fechaCertificacion: String, vigencia: String) {
+        if (id == null) return
+
+        val equipo = hashMapOf(
+            "numeroSerie" to numeroSerie,
+            "tipoEquipo" to tipoEquipo,
+            "modelo" to modelo,
+            "fechaAdquisicion" to fechaAdquisicion,
+            "fechaCertificacion" to fechaCertificacion,
+            "vigencia" to vigencia
         )
 
-        baseDeDatos.guardarEquipo(equipo,
-            onSuccess = {
+        db.collection("equipos").document(id)
+            .set(equipo)
+            .addOnSuccessListener {
                 Toast.makeText(context, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
-            },
-            onFailure = {
+            }
+            .addOnFailureListener {
                 Toast.makeText(context, "Error al actualizar datos", Toast.LENGTH_SHORT).show()
             }
-        )
     }
 
     private fun cancelarEdicion() {
@@ -123,23 +122,35 @@ class ge_Editar_Fragment : Fragment() {
         etFechaAdquisicion.text = ""
         etFechaCertificacion.text = ""
         etVigencia.text.clear()
-
         Toast.makeText(requireContext(), "Edición cancelada", Toast.LENGTH_SHORT).show()
     }
 
     private fun buscarEquipoPorNumeroSerie(numeroSerie: String) {
-        baseDeDatos.buscarEquipoPorNumeroSerie(numeroSerie,
-            onSuccess = { equipo ->
-                etTipoEquipo.setText(equipo.tipoEquipo)
-                etModelo.setText(equipo.modelo)
-                etFechaAdquisicion.text = equipo.fechaAdquisicion
-                etFechaCertificacion.text = equipo.fechaCertificacion
-                etVigencia.setText(equipo.vigencia)
-            },
-            onFailure = {
-                Toast.makeText(context, "Equipo no encontrado", Toast.LENGTH_SHORT).show()
+        progressBar.visibility = View.VISIBLE  // Muestra el ProgressBar
+        db.collection("equipos")
+            .whereEqualTo("numeroSerie", numeroSerie)
+            .get()
+            .addOnSuccessListener { documents ->
+                equipoId = null
+                for (document in documents) {
+                    equipoId = document.id
+                    val equipo = document.toObject(Equipo::class.java)
+                    etTipoEquipo.setText(equipo.tipoEquipo)
+                    etModelo.setText(equipo.modelo)
+                    etFechaAdquisicion.text = equipo.fechaAdquisicion
+                    etFechaCertificacion.text = equipo.fechaCertificacion
+                    etVigencia.setText(equipo.vigencia)
+                    break
+                }
+                if (equipoId == null) {
+                    Toast.makeText(context, "Equipo no encontrado", Toast.LENGTH_SHORT).show()
+                }
+                progressBar.visibility = View.INVISIBLE  // Oculta el ProgressBar
             }
-        )
+            .addOnFailureListener {
+                Toast.makeText(context, "Error al buscar equipo", Toast.LENGTH_SHORT).show()
+                progressBar.visibility = View.INVISIBLE  // Oculta el ProgressBar en caso de error
+            }
     }
 
     private fun showDatePickerDialog(onDateSet: (String) -> Unit) {
@@ -173,4 +184,3 @@ class ge_Editar_Fragment : Fragment() {
         }
     }
 }
-
