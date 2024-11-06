@@ -18,15 +18,27 @@
             android:padding="16dp"
             android:gravity="center">
 
+            <!-- ID Automático (Solo Lectura) -->
+            <TextView
+                android:id="@+id/tvAutoID"
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:text="ID:"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <!-- Título -->
             <TextView
-                android:id="@+id/me_edit_modif"
+                android:id="@+id/crear_me"
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
-                android:text="Editar o Consultar"
+                android:text="@string/titleCrear"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -36,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Número de Serie"
+                android:text="@string/Numero_Serial"
                 android:textSize="16sp" />
 
             <EditText
@@ -46,17 +58,47 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Número de serie"
+                android:hint="@string/Ing_Numero_Serial"
                 android:inputType="textVisiblePassword"
                 android:maxLines="1" />
 
+            <!-- Campo de Código de Obra -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Cod__Obra"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etCodigoObra"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Cod__Obra"
+                android:inputType="number"
+                android:maxLines="1" />
+
+            <!-- Botón Buscar -->
+            <Button
+                android:id="@+id/btnBuscar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Buscar" />
+
+            <!-- Los demás campos aparecerán después de presionar Buscar -->
             <!-- Campo de Tipo de Equipo -->
             <TextView
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Tipo de Equipo"
+                android:text="@string/Tipo_Equipo"
                 android:textSize="16sp" />
 
             <EditText
@@ -66,11 +108,31 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Tipo de Equipo"
+                android:hint="@string/Ing_Tipo_Equipo"
                 android:inputType="text"
                 android:maxLines="1" />
 
-            <!-- Campo de Fecha de Adquisición -->
+            <!-- Campo de Nombre de Obra -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Nombre_Obra"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNombreObra"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Nom__Obra"
+                android:inputType="textAutoComplete"
+                android:maxLines="1" />
+
+            <!-- Campo de Fecha de Salida -->
             <TextView
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
@@ -90,16 +152,15 @@
                 android:inputType="date"
                 android:maxLines="1" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btnFechaSalida"
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Seleccionar Fecha de Salida"
-                />
+                android:text="Seleccionar Fecha de Salida" />
 
-            <!-- Campo de Fecha de Certificación -->
+            <!-- Campo de Fecha de Ingreso -->
             <TextView
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
@@ -117,7 +178,8 @@
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="Fecha de Ingreso"
                 android:inputType="date"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:enabled="false" />
 
             <Button
                 android:id="@+id/btnFechaIngreso"
@@ -126,6 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Seleccionar Fecha de Ingreso" />
+
 
             <!-- Botones para Buscar y Guardar -->
             <LinearLayout
@@ -136,21 +199,21 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/btnBuscar"
-                    style="@style/estilo_boton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Buscar"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
                     android:id="@+id/btnGuardar"
                     style="@style/estilo_boton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guardar"
+                    android:text="@string/btnGuardar"
+                    android:layout_marginStart="8dp"/>
+
+                <Button
+                    android:id="@+id/btnEliminar_me"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btnEliminar"
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 

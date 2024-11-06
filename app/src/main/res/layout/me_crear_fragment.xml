@@ -9,88 +9,217 @@
     tools:context="com.example.app_inventario_arquitectura.me_crear_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="660dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <!-- Título -->
-        <TextView
-            android:id="@+id/crear_me"
-            style="@style/estilo_letra"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/titleCrear" />
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
 
-        <!-- Campo de Nombre de Obra -->
-        <TextView
-            style="@style/estilo_letra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Nombre de la Obra"
-            android:textSize="16sp" />
+            <!-- ID Automático (Solo Lectura) -->
+            <TextView
+                android:id="@+id/tvAutoID"
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:text="ID:"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etNombreObra"
-            style="@style/estilo_letra_cuadro"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese el nombre de la Obra"
-            android:inputType="textVisiblePassword"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <!-- Título -->
+            <TextView
+                android:id="@+id/crear_me"
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="@string/titleCrear"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Campo de Número de Serie -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Numero_Serial"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNumeroSerie"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Numero_Serial"
+                android:inputType="textVisiblePassword"
+                android:maxLines="1" />
+
+            <!-- Campo de Código de Obra -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Cod__Obra"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etCodigoObra"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Cod__Obra"
+                android:inputType="number"
+                android:maxLines="1" />
+
+            <!-- Botón Buscar -->
+            <Button
+                android:id="@+id/btnBuscar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Buscar" />
+
+            <!-- Los demás campos aparecerán después de presionar Buscar -->
+            <!-- Campo de Tipo de Equipo -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/Tipo_Equipo"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etTipoEquipo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Tipo_Equipo"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <!-- Campo de Nombre de Obra -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Nombre_Obra"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNombreObra"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Nom__Obra"
+                android:inputType="textAutoComplete"
+                android:maxLines="1" />
+
+            <!-- Campo de Fecha de Salida -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fecha de Salida"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etFechaSalida"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Fecha de Salida"
+                android:inputType="date"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/btnFechaSalida"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Seleccionar Fecha de Salida" />
+
+            <!-- Campo de Fecha de Ingreso -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fecha de Ingreso"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etFechaIngreso"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Fecha de Ingreso"
+                android:inputType="date"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <Button
+                android:id="@+id/btnFechaIngreso"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Seleccionar Fecha de Ingreso" />
 
 
-        <!-- Campo de Observaciones -->
-        <TextView
-            style="@style/estilo_letra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Observaciones" />
+            <!-- Botones para Buscar y Guardar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
 
-        <EditText
-            android:id="@+id/etObservaciones"
-            style="@style/estilo_letra_cuadro"
-            android:layout_width="237dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese observaciones (opcional)"
-            android:inputType="textMultiLine" />
+                <Button
+                    android:id="@+id/btnGuardar"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btnGuardar"
+                    android:layout_marginStart="8dp"/>
 
-        <Button
-            android:id="@+id/btnGuardar"
-            style="@style/estilo_boton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:onClick="guardar"
-            android:text="@string/btnGuardar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+                <Button
+                    android:id="@+id/btnEliminar_me"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btnEliminar"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
 
-
-            />
-    </LinearLayout>
-
-
-
-
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
