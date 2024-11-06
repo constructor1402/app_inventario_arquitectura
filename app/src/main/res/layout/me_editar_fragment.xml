@@ -32,7 +32,7 @@
 
             <!-- Título -->
             <TextView
-                android:id="@+id/crear_me"
+                android:id="@+id/me_editar"
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

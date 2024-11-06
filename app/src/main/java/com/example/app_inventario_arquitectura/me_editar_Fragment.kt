@@ -38,7 +38,7 @@ class me_editar_Fragment : Fragment() {
 
         val tipoGestion = arguments?.getString(ARG_TIPO_GESTION)
         // Cambia el título o contenido según el tipo de gestión
-        val tituloTextView: TextView = view.findViewById(R.id.me_edit_modif)
+        val tituloTextView: TextView = view.findViewById(R.id.me_editar)
         tituloTextView.text = "Editar o Modificar $tipoGestion"
     }
 

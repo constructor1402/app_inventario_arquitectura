@@ -60,5 +60,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="instruccion_au">Por favor, ingrese el correo electronico y presione "Buscar" para cargar los datos.</string>
+
+
+
 
 </resources>

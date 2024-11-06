@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="Ingrese el correo electrónico para buscar"
+                android:text="@string/instruccion_au"
                 android:textSize="14sp"/>
 
             <!-- Campo de Correo Electrónico (Búsqueda) -->
