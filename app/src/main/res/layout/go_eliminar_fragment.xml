@@ -8,9 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         android:padding="16dp">
 
         <!-- Título -->
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Eliminar" />
+            android:text="Eliminar Obra" />
 
         <!-- Campo de Nombre de Obra -->
         <TextView
@@ -28,21 +28,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Nombre de la Obra"
-            android:textSize="16sp" />
+            android:text="Codigo de la Obra" />
 
         <EditText
             android:id="@+id/etNombreObraEliminar"
             style="@style/estilo_letra_cuadro"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese el nombre de la Obra"
-            android:inputType="textVisiblePassword"
-            android:maxLines="1" />
+            android:hint="Ingrese el codigo de la Obra"
+            android:inputType="text" />
 
         <!-- Campo de Dirección de Obra -->
         <TextView
@@ -50,21 +46,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Dirección de la Obra"
-            android:textSize="16sp" />
+            android:text="Dirección de la Obra" />
 
         <EditText
             android:id="@+id/etDireccionObraEliminar"
             style="@style/estilo_letra_cuadro"
-            android:layout_width="237dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
             android:hint="Dirección de la Obra"
-            android:inputType="text"
-            android:maxLines="1" />
+            android:inputType="text" />
 
         <!-- Campo para Ubicación de la Obra (URL o Coordenadas) -->
         <TextView
@@ -72,17 +64,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Ubicación"
-            android:textSize="16sp"/>
+            android:text="Ubicación" />
 
         <EditText
             android:id="@+id/etUbicacionObraEliminar"
             style="@style/estilo_letra_cuadro"
-            android:layout_width="237dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
             android:hint="Coordenadas de Google Maps"
             android:inputType="text" />
@@ -98,11 +87,9 @@
         <EditText
             android:id="@+id/etObservacionesEliminar"
             style="@style/estilo_letra_cuadro"
-            android:layout_width="237dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
             android:hint="Observaciones"
             android:inputType="textMultiLine" />
@@ -130,6 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center"
             android:layout_marginTop="24dp">
 
             <Button
@@ -137,8 +125,7 @@
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btnGuardar"
-                android:onClick="guardar" />
+                android:text="Eliminar" />
 
             <Button
                 android:id="@+id/btnCancelar"
@@ -146,8 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Cancelar"
-                android:onClick="cancelar" />
+                android:text="Cancelar" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
