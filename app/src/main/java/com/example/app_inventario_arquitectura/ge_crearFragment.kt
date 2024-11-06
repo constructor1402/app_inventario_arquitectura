@@ -16,12 +16,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidmaster.R
 import com.google.android.material.button.MaterialButton
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import java.util.Calendar
+import java.util.UUID
 
 class ge_crearFragment : Fragment() {
 
     private var tipoGestion: String? = null
-    private lateinit var baseDeDatos: BaseDeDatos
     private lateinit var ivImagenEquipo: ImageView
     private lateinit var btnCargarImagen: Button
     private lateinit var etNumeroSerie: EditText
@@ -36,13 +38,16 @@ class ge_crearFragment : Fragment() {
     private lateinit var btnCancelar: Button
 
     private val IMAGE_PICK_CODE = 1000
+    private var imageUri: Uri? = null
+
+    private val firestore = FirebaseFirestore.getInstance()
+    private val storage = FirebaseStorage.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             tipoGestion = it.getString(ARG_TIPO_GESTION)
         }
-        baseDeDatos = MockBaseDeDatos() // Utiliza la implementación simulada
     }
 
     override fun onCreateView(
@@ -101,7 +106,7 @@ class ge_crearFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == IMAGE_PICK_CODE && resultCode == Activity.RESULT_OK) {
-            val imageUri: Uri? = data?.data
+            imageUri = data?.data
             ivImagenEquipo.setImageURI(imageUri)
         }
     }
@@ -115,31 +120,55 @@ class ge_crearFragment : Fragment() {
         val vigencia = etVigencia.text.toString().trim()
 
         if (numeroSerie.isEmpty() || tipoEquipo.isEmpty() || modelo.isEmpty() ||
-            fechaAdquisicion.isEmpty() || fechaCertificacion.isEmpty() || vigencia.isEmpty()) {
-            Toast.makeText(requireContext(), "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
+            fechaAdquisicion.isEmpty() || fechaCertificacion.isEmpty() || vigencia.isEmpty() || imageUri == null) {
+            Toast.makeText(requireContext(), "Por favor, complete todos los campos y cargue una imagen.", Toast.LENGTH_SHORT).show()
         } else {
             guardarEquipo(numeroSerie, tipoEquipo, modelo, fechaAdquisicion, fechaCertificacion, vigencia)
         }
     }
 
-    private fun guardarEquipo(numeroSerie: String, tipoEquipo: String, modelo: String, fechaAdquisicion: String, fechaCertificacion: String, vigencia: String) {
-        val equipo = Equipo(
-            numeroSerie = numeroSerie,
-            tipoEquipo = tipoEquipo,
-            modelo = modelo,
-            fechaAdquisicion = fechaAdquisicion,
-            fechaCertificacion = fechaCertificacion,
-            vigencia = vigencia
-        )
+    private fun guardarEquipo(
+        numeroSerie: String,
+        tipoEquipo: String,
+        modelo: String,
+        fechaAdquisicion: String,
+        fechaCertificacion: String,
+        vigencia: String
+    ) {
+        val imageRef = storage.reference.child("imagenes_equipos/${UUID.randomUUID()}.jpg")
 
-        baseDeDatos.guardarEquipo(equipo,
-            onSuccess = {
-                Toast.makeText(context, "Datos guardados correctamente", Toast.LENGTH_SHORT).show()
-            },
-            onFailure = {
-                Toast.makeText(context, "Error al guardar datos", Toast.LENGTH_SHORT).show()
+        // Sube la imagen a Firebase Storage
+        imageUri?.let {
+            imageRef.putFile(it).addOnSuccessListener {
+                // Obtiene la URL de la imagen
+                imageRef.downloadUrl.addOnSuccessListener { imageUrl ->
+                    // Crea el objeto de datos para Firestore
+                    val equipo = hashMapOf(
+                        "numeroSerie" to numeroSerie,
+                        "tipoEquipo" to tipoEquipo,
+                        "modelo" to modelo,
+                        "fechaAdquisicion" to fechaAdquisicion,
+                        "fechaCertificacion" to fechaCertificacion,
+                        "vigencia" to vigencia,
+                        "imageUrl" to imageUrl.toString()
+                    )
+
+                    // Guarda el equipo en Firestore
+                    firestore.collection("equipos")
+                        .add(equipo)
+                        .addOnSuccessListener {
+                            Toast.makeText(context, "Datos guardados correctamente", Toast.LENGTH_SHORT).show()
+                            // Limpia el formulario después de guardar
+                            cancelarFormulario()
+                        }
+                        .addOnFailureListener { e ->
+                            Toast.makeText(context, "Error al guardar datos: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+            }.addOnFailureListener { e ->
+                Toast.makeText(context, "Error al subir imagen: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-        )
+        }
     }
 
     private fun cancelarFormulario() {
@@ -149,8 +178,10 @@ class ge_crearFragment : Fragment() {
         etFechaAdquisicion.text = ""
         etFechaCertificacion.text = ""
         etVigencia.text.clear()
+        ivImagenEquipo.setImageURI(null)
+        imageUri = null
 
-        Toast.makeText(requireContext(), "Datos no guardados", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Formulario cancelado", Toast.LENGTH_SHORT).show()
     }
 
     private fun showDatePickerDialog(onDateSelected: (String) -> Unit) {
