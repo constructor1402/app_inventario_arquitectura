@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.androidmaster.R
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -178,6 +179,11 @@ class ge_Editar_Fragment : Fragment() {
                     etFechaAdquisicion.text = equipo.fechaAdquisicion
                     etFechaCertificacion.text = equipo.fechaCertificacion
                     etVigencia.setText(equipo.vigencia)
+
+                    equipo.urlImagen?.let { url ->
+                        // Cargar imagen desde URL en Firebase Storage
+                        Glide.with(this).load(url).into(ivImagenEquipo)
+                    }
                     break
                 }
                 if (equipoId == null) {
@@ -209,8 +215,6 @@ class ge_Editar_Fragment : Fragment() {
         )
         datePickerDialog.show()
     }
-
-    // Función para mostrar el DatePicker y otras funciones adicionales no se alteraron
 
     companion object {
         private const val ARG_TIPO_GESTION = "tipo_gestion"
