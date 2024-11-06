@@ -42,10 +42,7 @@ class go_obras_Fragment : Fragment(R.layout.go_obras_fragment) {
                     cargarFragmento(go_editar_Fragment.newInstance(""))
                     true
                 }
-                R.id.ic_eliminar -> {
-                    cargarFragmento(go_eliminar_Fragment.newInstance(""))
-                    true
-                }
+
                 else -> false
             }
         }

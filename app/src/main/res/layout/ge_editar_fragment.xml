@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="@string/instruccion_consulta"
+                android:text="@string/instruccion_consulta_equipo"
                 android:textSize="14sp"/>
 
             <!-- Campo de Número de Serie -->
@@ -232,7 +233,7 @@
 
 
 
-            <!-- Botones para Guardar y Cancelar -->
+            <!-- Botones para Guardar y Cancelar en una fila -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -265,11 +266,26 @@
                     app:iconTint="#9DA68C"
                     app:strokeColor="@color/colortexto"
                     app:strokeWidth="1dp"
-
                     />
             </LinearLayout>
 
+            <!-- Botón para Eliminar en una fila independiente -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEliminar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/btnEliminar"
+                app:icon="@drawable/ic_eliminar"
+                app:iconSize="15dp"
+                app:iconTint="#9DA68C"
+                app:strokeColor="@color/colortexto"
+                app:strokeWidth="1dp" />
+
         </LinearLayout>
+
     </ScrollView>
 </FrameLayout>
 

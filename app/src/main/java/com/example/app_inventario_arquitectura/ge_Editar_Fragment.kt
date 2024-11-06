@@ -26,6 +26,7 @@ class ge_Editar_Fragment : Fragment() {
     private lateinit var btnFechaCertificacion: Button
     private lateinit var btnGuardar: Button
     private lateinit var btnCancelar: Button
+    private lateinit var btnBuscar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +43,6 @@ class ge_Editar_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val tipoGestion = arguments?.getString(ARG_TIPO_GESTION)
-        val tituloTextView: TextView = view.findViewById(R.id.edit_modif_gestion)
-        tituloTextView.text = "Editar o Modificar $tipoGestion"
-
         etNumeroSerie = view.findViewById(R.id.etNumeroSerie)
         etTipoEquipo = view.findViewById(R.id.etTipoEquipo)
         etModelo = view.findViewById(R.id.etModelo)
@@ -56,12 +53,26 @@ class ge_Editar_Fragment : Fragment() {
         btnFechaCertificacion = view.findViewById(R.id.btnFechaCertificacion)
         btnGuardar = view.findViewById(R.id.btnGuardar)
         btnCancelar = view.findViewById(R.id.btnCancelarEditar)
+        btnBuscar = view.findViewById(R.id.btnBuscar)
+
+        // Deshabilitar campos de edición al inicio
+        setFieldsEnabled(false)
+
+        btnBuscar.setOnClickListener {
+            val numeroSerie = etNumeroSerie.text.toString().trim()
+            if (numeroSerie.isNotEmpty()) {
+                buscarEquipoPorNumeroSerie(numeroSerie)
+            } else {
+                Toast.makeText(requireContext(), "Ingrese un número de serie para buscar", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         btnFechaAdquisicion.setOnClickListener {
             showDatePickerDialog { date ->
                 etFechaAdquisicion.text = date
             }
         }
+
         btnFechaCertificacion.setOnClickListener {
             showDatePickerDialog { date ->
                 etFechaCertificacion.text = date
@@ -75,9 +86,36 @@ class ge_Editar_Fragment : Fragment() {
         btnCancelar.setOnClickListener {
             cancelarEdicion()
         }
+    }
 
-        val numeroSerie = etNumeroSerie.text.toString()
-        buscarEquipoPorNumeroSerie(numeroSerie)
+    private fun setFieldsEnabled(enabled: Boolean) {
+        etTipoEquipo.isEnabled = enabled
+        etModelo.isEnabled = enabled
+        etFechaAdquisicion.isEnabled = enabled
+        etFechaCertificacion.isEnabled = enabled
+        etVigencia.isEnabled = enabled
+        btnFechaAdquisicion.isEnabled = enabled
+        btnFechaCertificacion.isEnabled = enabled
+        btnGuardar.isEnabled = enabled
+    }
+
+    private fun buscarEquipoPorNumeroSerie(numeroSerie: String) {
+        baseDeDatos.buscarEquipoPorNumeroSerie(numeroSerie,
+            onSuccess = { equipo ->
+                // Llenar los campos con los datos del equipo encontrado
+                etTipoEquipo.setText(equipo.tipoEquipo)
+                etModelo.setText(equipo.modelo)
+                etFechaAdquisicion.text = equipo.fechaAdquisicion
+                etFechaCertificacion.text = equipo.fechaCertificacion
+                etVigencia.setText(equipo.vigencia)
+
+                // Habilitar los campos para edición después de la búsqueda exitosa
+                setFieldsEnabled(true)
+            },
+            onFailure = {
+                Toast.makeText(context, "Equipo no encontrado", Toast.LENGTH_SHORT).show()
+            }
+        )
     }
 
     private fun validarCampos() {
@@ -127,21 +165,6 @@ class ge_Editar_Fragment : Fragment() {
         Toast.makeText(requireContext(), "Edición cancelada", Toast.LENGTH_SHORT).show()
     }
 
-    private fun buscarEquipoPorNumeroSerie(numeroSerie: String) {
-        baseDeDatos.buscarEquipoPorNumeroSerie(numeroSerie,
-            onSuccess = { equipo ->
-                etTipoEquipo.setText(equipo.tipoEquipo)
-                etModelo.setText(equipo.modelo)
-                etFechaAdquisicion.text = equipo.fechaAdquisicion
-                etFechaCertificacion.text = equipo.fechaCertificacion
-                etVigencia.setText(equipo.vigencia)
-            },
-            onFailure = {
-                Toast.makeText(context, "Equipo no encontrado", Toast.LENGTH_SHORT).show()
-            }
-        )
-    }
-
     private fun showDatePickerDialog(onDateSet: (String) -> Unit) {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
@@ -173,4 +196,3 @@ class ge_Editar_Fragment : Fragment() {
         }
     }
 }
-

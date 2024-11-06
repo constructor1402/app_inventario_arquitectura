@@ -41,10 +41,6 @@ class ge_equiposFragment : Fragment(R.layout.ge_equipos_fragment) {
                     cargarFragmento(ge_Editar_Fragment.newInstance(""))
                     true
                 }
-                R.id.ic_eliminar -> {
-                    cargarFragmento(ge_Eliminar_Fragment.newInstance(""))
-                    true
-                }
                 else -> false
             }
         }

@@ -46,10 +46,6 @@ class me_movEquiposFragment : Fragment(R.layout.me_mov_equipos_fragment) {
                     cargarFragmento(me_editar_Fragment.newInstance(""))
                     true
                 }
-                R.id.ic_eliminar -> {
-                    cargarFragmento(me_Eliminar_Fragment.newInstance(""))
-                    true
-                }
                 else -> false
             }
         }

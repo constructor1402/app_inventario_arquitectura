@@ -18,10 +18,19 @@
     <string name="Cargar_Imagen_Equipo">Cargar Imagen</string>
     <string name="Vigencia">Vigencia en Meses</string>
     <string name="Ing_Vigencia">Ingrese Vigencia</string>
-    <string name="instruccion_consulta">Por favor, ingrese el número de serie y presione "Buscar" para cargar los datos.</string>
+    <string name="instruccion_consulta_equipo">Por favor, ingrese el número de serie y presione "Buscar" para cargar los datos.</string>
 
-
-
+    <string name="Cod__Obra">Codigo de la Obra</string>
+    <string name="Ing_Cod__Obra">Ingrese el Codigo de la Obra</string>
+    <string name="Nombre_Obra">Nombre de la Obra</string>
+    <string name="Ing_Nom__Obra">Ingrese el Nombre de la Obra</string>
+    <string name="Nombre_Cliente">Cliente de la Obra</string>
+    <string name="Ing_Nom__Cliente">Ingrese el Cliente de la Obra</string>
+    <string name="Ub_Departamente">Ubicación del Departamento de la Obra</string>
+    <string name="Ing_Departamento">Departamento</string>
+    <string name="Ub_Ciudad">Ubicación de la Ciudad de la Obra</string>
+    <string name="Ing_Ciudad">Ciudad</string>
+    <string name="instruccion_consulta_Obra">Por favor, ingrese el número de obra y presione "Buscar" para cargar los datos.</string>
 
 
 

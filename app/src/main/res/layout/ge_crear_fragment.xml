@@ -1,10 +1,9 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/crearEquipo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/crearEquipo"
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.ge_crearFragment">
 
@@ -47,12 +46,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
+                android:autofillHints="text"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="@string/Ing_Numero_Serial"
                 android:inputType="text"
-                android:autofillHints="text"
-                android:maxLines="1"
-                />
+                android:maxLines="1" />
 
             <!-- Campo de Tipo de Equipo -->
             <TextView
@@ -69,12 +67,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
+                android:autofillHints="text"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="@string/Ing_Tipo_Equipo"
                 android:inputType="text"
-                android:autofillHints="text"
-                android:maxLines="1"
-                />
+                android:maxLines="1" />
 
             <!-- Campo de Modelo -->
             <TextView
@@ -91,12 +88,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
+                android:autofillHints="text"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="@string/Ing_Modelo"
                 android:inputType="text"
-                android:autofillHints="text"
-                android:maxLines="1"
-                />
+                android:maxLines="1" />
 
             <!-- Sección para cargar la imagen del equipo -->
             <TextView
@@ -112,9 +108,9 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
+                android:contentDescription="@string/Imagen_Equipo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_placeholder_icon"
-                android:contentDescription="@string/Imagen_Equipo" />
+                android:src="@drawable/ic_placeholder_icon" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCargarImagen"
@@ -192,12 +188,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
+                android:autofillHints="number"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="@string/Ing_Vigencia"
                 android:inputType="number"
-                android:autofillHints="number"
-                android:maxLines="1"
-                />
+                android:maxLines="1" />
             <!-- Botones para Guardar y Cancelar -->
             <LinearLayout
                 android:layout_width="match_parent"
