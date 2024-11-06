@@ -48,12 +48,12 @@ class panelDeControlFragment : Fragment(R.layout.fragment_panel_de_control) {
             }
         }
 
-        /*btnControlEntradasSalidas.setOnClickListener {
+        btnControlEntradasSalidas.setOnClickListener {
             parentFragmentManager.commit {
-                replace(R.id.fragmentContainer, ControlEntradasSalidasFragment())
+                replace(R.id.fragmentContainer, me_movEquiposFragment())
                 addToBackStack(null)
             }
-        }*/
+        }
 
         /*btnAdminUsuarios.setOnClickListener {
             parentFragmentManager.commit {

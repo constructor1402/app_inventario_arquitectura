@@ -8,17 +8,34 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.androidmaster.R
 import java.util.Calendar
 
 class ge_Editar_Fragment : Fragment() {
 
+    private lateinit var baseDeDatos: BaseDeDatos
+    private lateinit var etNumeroSerie: EditText
+    private lateinit var etTipoEquipo: EditText
+    private lateinit var etModelo: EditText
+    private lateinit var etFechaAdquisicion: TextView
+    private lateinit var etFechaCertificacion: TextView
+    private lateinit var etVigencia: EditText
+    private lateinit var btnFechaAdquisicion: Button
+    private lateinit var btnFechaCertificacion: Button
+    private lateinit var btnGuardar: Button
+    private lateinit var btnCancelar: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        baseDeDatos = MockBaseDeDatos() // Asegúrate de que esta clase esté implementada
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.ge_editar_fragment, container, false)
     }
 
@@ -26,31 +43,105 @@ class ge_Editar_Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val tipoGestion = arguments?.getString(ARG_TIPO_GESTION)
-        // Cambia el título o contenido según el tipo de gestión
         val tituloTextView: TextView = view.findViewById(R.id.edit_modif_gestion)
         tituloTextView.text = "Editar o Modificar $tipoGestion"
 
-        // Inicializa los elementos y asigna los listeners para seleccionar la fecha
-        val etFechaAdquisicion: EditText = view.findViewById(R.id.etFechaAdquisicion)
-        val etFechaCertificacion: EditText = view.findViewById(R.id.etFechaCertificacion)
-        val btnFechaAdquisicion: Button = view.findViewById(R.id.btnFechaAdquisicion)
-        val btnFechaCertificacion: Button = view.findViewById(R.id.btnFechaCertificacion)
+        etNumeroSerie = view.findViewById(R.id.etNumeroSerie)
+        etTipoEquipo = view.findViewById(R.id.etTipoEquipo)
+        etModelo = view.findViewById(R.id.etModelo)
+        etFechaAdquisicion = view.findViewById(R.id.etFechaAdquisicion)
+        etFechaCertificacion = view.findViewById(R.id.etFechaCertificacion)
+        etVigencia = view.findViewById(R.id.etVigencia)
+        btnFechaAdquisicion = view.findViewById(R.id.btnFechaAdquisicion)
+        btnFechaCertificacion = view.findViewById(R.id.btnFechaCertificacion)
+        btnGuardar = view.findViewById(R.id.btnGuardar)
+        btnCancelar = view.findViewById(R.id.btnCancelarEditar)
 
-        // Muestra el DatePickerDialog y establece la fecha en el EditText correspondiente
         btnFechaAdquisicion.setOnClickListener {
             showDatePickerDialog { date ->
-                etFechaAdquisicion.setText(date)
+                etFechaAdquisicion.text = date
+            }
+        }
+        btnFechaCertificacion.setOnClickListener {
+            showDatePickerDialog { date ->
+                etFechaCertificacion.text = date
             }
         }
 
-        btnFechaCertificacion.setOnClickListener {
-            showDatePickerDialog { date ->
-                etFechaCertificacion.setText(date)
-            }
+        btnGuardar.setOnClickListener {
+            validarCampos()
+        }
+
+        btnCancelar.setOnClickListener {
+            cancelarEdicion()
+        }
+
+        val numeroSerie = etNumeroSerie.text.toString()
+        buscarEquipoPorNumeroSerie(numeroSerie)
+    }
+
+    private fun validarCampos() {
+        val numeroSerie = etNumeroSerie.text.toString().trim()
+        val tipoEquipo = etTipoEquipo.text.toString().trim()
+        val modelo = etModelo.text.toString().trim()
+        val fechaAdquisicion = etFechaAdquisicion.text.toString().trim()
+        val fechaCertificacion = etFechaCertificacion.text.toString().trim()
+        val vigencia = etVigencia.text.toString().trim()
+
+        if (numeroSerie.isEmpty() || tipoEquipo.isEmpty() || modelo.isEmpty() ||
+            fechaAdquisicion.isEmpty() || fechaCertificacion.isEmpty() || vigencia.isEmpty()) {
+            Toast.makeText(requireContext(), "Por favor, complete todos los campos obligatorios.", Toast.LENGTH_SHORT).show()
+        } else {
+            guardarEquipo(numeroSerie, tipoEquipo, modelo, fechaAdquisicion, fechaCertificacion, vigencia)
         }
     }
 
-    // Función para mostrar el DatePickerDialog
+    private fun guardarEquipo(numeroSerie: String, tipoEquipo: String, modelo: String, fechaAdquisicion: String, fechaCertificacion: String, vigencia: String) {
+        val equipo = Equipo(
+            numeroSerie = numeroSerie,
+            tipoEquipo = tipoEquipo,
+            modelo = modelo,
+            fechaAdquisicion = fechaAdquisicion,
+            fechaCertificacion = fechaCertificacion,
+            vigencia = vigencia
+        )
+
+        baseDeDatos.guardarEquipo(equipo,
+            onSuccess = {
+                Toast.makeText(context, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
+            },
+            onFailure = {
+                Toast.makeText(context, "Error al actualizar datos", Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
+
+    private fun cancelarEdicion() {
+        etNumeroSerie.text.clear()
+        etTipoEquipo.text.clear()
+        etModelo.text.clear()
+        etFechaAdquisicion.text = ""
+        etFechaCertificacion.text = ""
+        etVigencia.text.clear()
+
+        Toast.makeText(requireContext(), "Edición cancelada", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun buscarEquipoPorNumeroSerie(numeroSerie: String) {
+        baseDeDatos.buscarEquipoPorNumeroSerie(numeroSerie,
+            onSuccess = { equipo ->
+                etTipoEquipo.setText(equipo.tipoEquipo)
+                etModelo.setText(equipo.modelo)
+                etFechaAdquisicion.text = equipo.fechaAdquisicion
+                etFechaCertificacion.text = equipo.fechaCertificacion
+                etVigencia.setText(equipo.vigencia)
+            },
+            onFailure = {
+                Toast.makeText(context, "Equipo no encontrado", Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
+
     private fun showDatePickerDialog(onDateSet: (String) -> Unit) {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
@@ -82,3 +173,4 @@ class ge_Editar_Fragment : Fragment() {
         }
     }
 }
+

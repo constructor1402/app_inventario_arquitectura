@@ -1,4 +1,5 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -25,9 +26,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
-                android:text="Editar o Consultar"
+                android:text="@string/titleEditarConsultar"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <!-- Instrucción -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="@string/instruccion_consulta"
+                android:textSize="14sp"/>
 
             <!-- Campo de Número de Serie -->
             <TextView
@@ -35,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Número de Serie"
+                android:text="@string/Numero_Serial"
                 android:textSize="16sp" />
 
             <EditText
@@ -45,9 +56,24 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Número de serie"
-                android:inputType="textVisiblePassword"
+                android:hint="@string/Ing_Numero_Serial"
+                android:inputType="text"
                 android:maxLines="1" />
+
+            <!-- Botón de búsqueda -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuscar"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="@string/btnBuscar"
+                app:icon="@drawable/ic_buscar"
+                app:iconSize="15dp"
+                app:iconTint="#9DA68C"
+                app:strokeColor="@color/colortexto"
+                app:strokeWidth="1dp"/>
 
             <!-- Campo de Tipo de Equipo -->
             <TextView
@@ -55,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Tipo de Equipo"
+                android:text="@string/Tipo_Equipo"
                 android:textSize="16sp" />
 
             <EditText
@@ -65,9 +91,64 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Tipo de Equipo"
+                android:hint="@string/Ing_Tipo_Equipo"
                 android:inputType="text"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Campo de Modelo -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Modelo"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etModelo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Modelo"
+                android:inputType="text|number"
+                android:maxLines="1"
+                android:enabled="false" />
+
+            <!-- Sección para cargar la imagen del equipo -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/Imagen_Equipo"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ivImagenEquipo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_placeholder_icon"
+                android:contentDescription="@string/Imagen_Equipo"
+                android:enabled="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCargarImagen"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Cargar_Imagen_Equipo"
+                android:enabled="false"
+                app:icon="@drawable/ic_cargar_ar"
+                app:iconSize="15dp"
+                app:iconTint="@color/colortexto"
+                app:strokeColor="@color/colortexto"
+                app:strokeWidth="1dp" />
 
             <!-- Campo de Fecha de Adquisición -->
             <TextView
@@ -75,19 +156,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Fecha de Adquisición"
+                android:text="@string/Fecha_Adquisicion"
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/etFechaAdquisicion"
                 style="@style/estilo_letra_cuadro"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Fecha de Adquisición"
-                android:inputType="date"
-                android:maxLines="1" />
+                android:hint="@string/Sel_Fecha_Adquisicion"
+                android:maxLines="1"
+                android:enabled="false" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFechaAdquisicion"
@@ -95,8 +176,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Seleccionar Fecha de Adquisición"
-                />
+                android:text="@string/Sel_Fecha_Adquisicion"
+                android:enabled="false" />
 
             <!-- Campo de Fecha de Certificación -->
             <TextView
@@ -104,19 +185,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Fecha de Certificación"
+                android:text="@string/Fecha_Certificacion"
                 android:textSize="16sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/etFechaCertificacion"
                 style="@style/estilo_letra_cuadro"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="Fecha de Certificación"
-                android:inputType="date"
-                android:maxLines="1" />
+                android:hint="@string/Fecha_Certificacion"
+                android:maxLines="1"
+                android:enabled="false" />
 
             <Button
                 android:id="@+id/btnFechaCertificacion"
@@ -124,35 +205,71 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Seleccionar Fecha de Certificación" />
+                android:text="@string/Sel_Fecha_Certificacion"
+                android:enabled="false" />
 
-            <!-- Botones para Buscar y Guardar -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Campo Vigencia -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Vigencia"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etVigencia"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Vigencia"
+                android:inputType="number"
+                android:autofillHints="number"
+                android:maxLines="1"
+                />
+
+
+
+            <!-- Botones para Guardar y Cancelar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginTop="16dp"
-                android:gravity="center">
+                android:layout_marginTop="24dp">
 
-                <Button
-                    android:id="@+id/btnBuscar"
-                    style="@style/estilo_boton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Buscar"
-                    android:layout_marginEnd="8dp" />
-
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGuardar"
                     style="@style/estilo_boton"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Guardar"
-                    android:layout_marginStart="8dp" />
+                    android:text="@string/btnGuardar"
+                    android:enabled="false"
+                    app:icon="@drawable/ic_guardar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelarEditar"
+                    style="@style/estilo_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_cancelar"
+                    android:layout_marginStart="16dp"
+                    app:icon="@drawable/ic_cancelar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp"
+
+                    />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
+

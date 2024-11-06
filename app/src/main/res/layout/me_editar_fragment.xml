@@ -1,0 +1,161 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_ingreso"
+    tools:context="com.example.app_inventario_arquitectura.me_editar_Fragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/me_edit_modif"
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="Editar o Consultar"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Campo de Número de Serie -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Número de Serie"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNumeroSerie"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Número de serie"
+                android:inputType="textVisiblePassword"
+                android:maxLines="1" />
+
+            <!-- Campo de Tipo de Equipo -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tipo de Equipo"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etTipoEquipo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Tipo de Equipo"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <!-- Campo de Fecha de Adquisición -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fecha de Salida"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etFechaSalida"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Fecha de Salida"
+                android:inputType="date"
+                android:maxLines="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFechaSalida"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Seleccionar Fecha de Salida"
+                />
+
+            <!-- Campo de Fecha de Certificación -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fecha de Ingreso"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etFechaIngreso"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="Fecha de Ingreso"
+                android:inputType="date"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/btnFechaIngreso"
+                style="@style/estilo_boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Seleccionar Fecha de Ingreso" />
+
+            <!-- Botones para Buscar y Guardar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Buscar"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guardar"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

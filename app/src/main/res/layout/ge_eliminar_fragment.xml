@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/Numero_Serie"
+            android:text="@string/Numero_Serial"
             android:textSize="16sp" />
 
         <EditText
@@ -40,7 +40,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="@string/Ing_Numero_Serie"
+            android:hint="@string/Ing_Numero_Serial"
             android:inputType="text|number"
             android:autofillHints="text|number"
             android:maxLines="1" />

@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/Numero_Serie"
+                android:text="@string/Numero_Serial"
                 android:textSize="16sp" />
 
             <EditText
@@ -48,9 +48,9 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
-                android:hint="@string/Ing_Numero_Serie"
-                android:inputType="text|number"
-                android:autofillHints="text|number"
+                android:hint="@string/Ing_Numero_Serial"
+                android:inputType="text"
+                android:autofillHints="text"
                 android:maxLines="1"
                 />
 
@@ -71,8 +71,30 @@
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
                 android:hint="@string/Ing_Tipo_Equipo"
-                android:inputType="text|number"
-                android:autofillHints="text|number"
+                android:inputType="text"
+                android:autofillHints="text"
+                android:maxLines="1"
+                />
+
+            <!-- Campo de Modelo -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Modelo"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etModelo"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Modelo"
+                android:inputType="text"
+                android:autofillHints="text"
                 android:maxLines="1"
                 />
 
@@ -155,6 +177,27 @@
                 app:strokeColor="@color/colortexto"
                 app:strokeWidth="1dp" />
 
+            <!-- Campo Vigencia -->
+            <TextView
+                style="@style/estilo_letra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/Vigencia"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etVigencia"
+                style="@style/estilo_letra_cuadro"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/cuadro_recbir_texto"
+                android:hint="@string/Ing_Vigencia"
+                android:inputType="number"
+                android:autofillHints="number"
+                android:maxLines="1"
+                />
             <!-- Botones para Guardar y Cancelar -->
             <LinearLayout
                 android:layout_width="match_parent"

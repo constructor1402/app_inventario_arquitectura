@@ -7,18 +7,33 @@
     <string name="hint_password">contraseña</string>
     <string name="hint_usuario">Digitar usuario</string>
     <string name="resumen_descripcion">Descripción del resumen que será leída por los lectores de pantalla.</string>
-    <string name="Numero_Serie">Número de Serie</string>
-    <string name="Ing_Numero_Serie">Ingrese el número de serie</string>
+
+    <string name="Numero_Serial">Número de Serial</string>
+    <string name="Ing_Numero_Serial">Ingrese el número de Serial</string>
     <string name="Tipo_Equipo">Tipo De Equipo</string>
     <string name="Ing_Tipo_Equipo">Ingrese Tipo De Equipo</string>
+    <string name="Modelo">Modelo</string>
+    <string name="Ing_Modelo">Ingrese Modelo</string>
     <string name="Imagen_Equipo">Imagen Del Equipo</string>
     <string name="Cargar_Imagen_Equipo">Cargar Imagen</string>
+    <string name="Vigencia">Vigencia en Meses</string>
+    <string name="Ing_Vigencia">Ingrese Vigencia</string>
+    <string name="instruccion_consulta">Por favor, ingrese el número de serie y presione "Buscar" para cargar los datos.</string>
+
+
+
+
+
 
 
     <string name="titlePanelControl">Panel de Control</string>
     <string name="titleCrear">Crear</string>
     <string name="titleEliminar">Eliminar</string>
     <string name="titleEditar">Editar</string>
+    <string name="titleEditarConsultar">Editar o Consultar</string>
+
+
+
 
     <!--  Botones -->
     <string name="btnIngresar"> Ingresa </string>
@@ -32,13 +47,13 @@
     <string name="btn_gestion_Usuarios">Administracion de Usuarios</string>
 
 
-
     <!-- Campos de Fecha -->
     <string name="Sel_Fecha_Adquisicion"> Seleccionar Fecha De Adquisicion </string>
     <string name="Fecha_Adquisicion"> Fecha De Adquisicion </string>
     <string name="Sel_Fecha_Certificacion"> Seleccionar Fecha De Certificacion </string>
     <string name="Fecha_Certificacion"> Fecha De Certificacion </string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

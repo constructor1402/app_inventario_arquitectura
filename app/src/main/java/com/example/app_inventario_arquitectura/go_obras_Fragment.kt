@@ -32,9 +32,6 @@ class go_obras_Fragment : Fragment(R.layout.go_obras_fragment) {
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        // Ajusta según el tipo de gestión
-        val tipoGestion = "Obras"
-
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.ic_crear -> {

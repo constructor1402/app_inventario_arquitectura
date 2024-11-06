@@ -1,15 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/crearObras"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/crearObras"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.go_crear_Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="660dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
@@ -22,6 +23,32 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Crear " />
+
+        <!-- Codigo de Obra -->
+        <TextView
+            style="@style/estilo_letra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Codigo de la Obra"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etCodigoObra"
+            style="@style/estilo_letra_cuadro"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/cuadro_recbir_texto"
+            android:hint="Ingrese el Codigo de la Obra"
+            android:inputType="number"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <!-- Campo de Nombre de Obra -->
         <TextView
@@ -42,23 +69,50 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
             android:hint="Ingrese el nombre de la Obra"
-            android:inputType="textVisiblePassword"
+            android:inputType="textAutoComplete"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Campo de Direccion De Obra -->
+
+        <!-- Campo de Cliente de Obra -->
+        <TextView
+            style="@style/estilo_letra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Cliente de la Obra"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etClienteObra"
+            style="@style/estilo_letra_cuadro"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/cuadro_recbir_texto"
+            android:hint="Ingrese el Cliente de la Obra"
+            android:inputType="textAutoComplete"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- Campo de Departamento De Obra -->
         <TextView
             style="@style/estilo_letra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Direccion Obra "
+            android:text="Ubicación del Departamento de la Obra "
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/etDireccionObra"
+            android:id="@+id/etDepartamentoObra"
             style="@style/estilo_letra_cuadro"
             android:layout_width="237dp"
             android:layout_height="48dp"
@@ -66,24 +120,24 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese Direccion Obra"
+            android:hint="Departamento"
             android:inputType="text"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Campo para Ubicación de la Obra (URL o Coordenadas) -->
+        <!-- Campo Ciudad de la Obra -->
         <TextView
             style="@style/estilo_letra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Ubicación"
-            android:textSize="16sp"/>
+            android:text="Ubicación de la Ciudad de la Obra "
+            android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/etUbicacionObra"
+            android:id="@+id/etCiudad"
             style="@style/estilo_letra_cuadro"
             android:layout_width="237dp"
             android:layout_height="48dp"
@@ -91,43 +145,46 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese enlace o coordenadas de Google Maps"
-            android:inputType="text"/>
+            android:hint="Ciudad"
+            android:inputType="text" />
 
-        <!-- Campo de Observaciones -->
-        <TextView
-            style="@style/estilo_letra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Observaciones"/>
+            <!-- Botones para Guardar y Cancelar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/etObservaciones"
-            style="@style/estilo_letra_cuadro"
-            android:layout_width="237dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/cuadro_recbir_texto"
-            android:hint="Ingrese observaciones (opcional)"
-            android:inputType="textMultiLine" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardar"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/btnGuardar"
+                    app:icon="@drawable/ic_guardar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp" />
 
-        <Button
-            android:id="@+id/btnGuardar"
-            style="@style/estilo_boton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:onClick="guardar"
-            android:text="@string/btnGuardar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelar"
+                    style="@style/estilo_boton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_cancelar"
+                    app:icon="@drawable/ic_cancelar"
+                    app:iconSize="15dp"
+                    app:iconTint="#9DA68C"
+                    app:strokeColor="@color/colortexto"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
 
-
-            />
     </LinearLayout>
 
 </FrameLayout>
