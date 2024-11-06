@@ -7,6 +7,14 @@
     android:background="@color/fondo_ingreso"
     tools:context="com.example.app_inventario_arquitectura.ge_Editar_Fragment">
 
+    <!-- ProgressBar centrado y oculto por defecto -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -84,6 +92,7 @@
                 android:text="@string/Tipo_Equipo"
                 android:textSize="16sp" />
 
+            <!-- Campo de Modelo -->
             <EditText
                 android:id="@+id/etTipoEquipo"
                 style="@style/estilo_letra_cuadro"
@@ -91,12 +100,11 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/cuadro_recbir_texto"
+                android:enabled="false"
                 android:hint="@string/Ing_Tipo_Equipo"
                 android:inputType="text"
-                android:maxLines="1"
-                android:enabled="false" />
+                android:maxLines="1" />
 
-            <!-- Campo de Modelo -->
             <TextView
                 style="@style/estilo_letra"
                 android:layout_width="wrap_content"
@@ -272,4 +280,3 @@
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
-
