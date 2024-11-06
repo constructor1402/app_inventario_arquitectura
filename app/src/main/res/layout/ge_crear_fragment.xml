@@ -151,7 +151,7 @@
 
             <!-- Campo de Fecha de Certificación -->
             <TextView
-                android:id="@+id/etFechaCertificacion_Crear"
+                android:id="@+id/et_ge_FechaCertificacion"
                 style="@style/estilo_letra_cuadro"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -161,7 +161,7 @@
                 android:maxLines="1" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnFechaCertificacion_Crear"
+                android:id="@+id/btn_ge_FechaCertificacion"
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

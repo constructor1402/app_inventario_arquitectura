@@ -30,7 +30,7 @@ class ge_Editar_Fragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        baseDeDatos = MockBaseDeDatos() // Asegúrate de que esta clase esté implementada
+
     }
 
     override fun onCreateView(
@@ -47,10 +47,10 @@ class ge_Editar_Fragment : Fragment() {
         etTipoEquipo = view.findViewById(R.id.etTipoEquipo)
         etModelo = view.findViewById(R.id.etModelo)
         etFechaAdquisicion = view.findViewById(R.id.etFechaAdquisicion)
-        etFechaCertificacion = view.findViewById(R.id.etFechaCertificacion)
+        etFechaCertificacion = view.findViewById(R.id.et_ge_FechaCertificacion)
         etVigencia = view.findViewById(R.id.etVigencia)
         btnFechaAdquisicion = view.findViewById(R.id.btnFechaAdquisicion)
-        btnFechaCertificacion = view.findViewById(R.id.btnFechaCertificacion)
+        btnFechaCertificacion = view.findViewById(R.id.btn_ge_FechaCertificacion)
         btnGuardar = view.findViewById(R.id.btnGuardar)
         btnCancelar = view.findViewById(R.id.btnCancelarEditar)
         btnBuscar = view.findViewById(R.id.btnBuscar)

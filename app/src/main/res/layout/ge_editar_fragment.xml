@@ -198,7 +198,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/etFechaCertificacion"
+                android:id="@+id/et_ge_FechaCertificacion"
                 style="@style/estilo_letra_cuadro"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -209,7 +209,7 @@
                 android:enabled="false" />
 
             <Button
-                android:id="@+id/btnFechaCertificacion"
+                android:id="@+id/btn_ge_FechaCertificacion"
                 style="@style/estilo_boton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
